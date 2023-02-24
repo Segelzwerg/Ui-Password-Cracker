@@ -12,8 +12,10 @@ def main():
     password_location = find_field()
     logging.debug(f'Password field location: {password_location}')
     confirm_list = [ENTER, WAIT_HALF_SEC, ENTER]
-    write('password', password_location)
-    play(confirm_list)
+    word_list = ['password']
+    for word in word_list:
+        write(word, password_location)
+        play(confirm_list)
 
 
 if __name__ == '__main__':
