@@ -13,17 +13,20 @@ stop_flag = False
 
 
 def stop() -> None:
-    main.stop_flag = True
+    global stop_flag
+    stop_flag = True
+    logging.debug('Stop requested')
 
 
 def main(regex: str) -> None:
     logging.basicConfig(level=logging.DEBUG)
-    keyboard.add_hotkey('esc', callback=stop())
+    keyboard.add_hotkey('esc', callback=stop)
     logging.info('Select the password field by right clicking on it.')
     password_location = find_field()
     logging.debug(f'Password field location: {password_location}')
     confirm_list = [ENTER, WAIT_HALF_SEC, ENTER]
     word_list = create(regex)
+    global stop_flag
     for word in word_list:
         if stop_flag:
             break
