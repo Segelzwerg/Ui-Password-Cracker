@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ui-password-cracker"
+version = "0.1.0"
+description = ""
+authors = ["Marcel <25705862+Segelzwerg@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "ui_password_cracker"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mouse = "^0.7.1"
+keyboard = "^0.13.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
