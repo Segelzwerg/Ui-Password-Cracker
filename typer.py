@@ -13,5 +13,8 @@ def write(word: str, position: Tuple[int, int]) -> None:
     mouse.click(button=mouse.LEFT)
     keyboard.press_and_release('tab')  # dirty fix
     sleep(0.1)
-    keyboard.write(word)
+    try:
+        keyboard.write(word)
+    except StopIteration:
+        logging.error(f'Could not parse: {word}')
     logging.debug(f'{word} written')
