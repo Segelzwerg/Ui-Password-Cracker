@@ -11,7 +11,3 @@ def write(word: str, position: Tuple[int, int]) -> None:
     mouse.move(position[0], position[1])
     mouse.click()
     keyboard.write(word)
-
-
-if __name__ == '__main__':
-    write('test')
