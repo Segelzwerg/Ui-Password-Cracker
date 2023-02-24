@@ -15,3 +15,11 @@ def test_difference(first_set, second_set):
 
     assert all(i in first_set for i in unique_set)
     assert not all(i in second_set for i in unique_set)
+
+
+def test_difference_same_set():
+    test_set = {'ab', 'bc'}
+    first_list = WordList(test_set)
+    second_list = WordList(test_set)
+    unique_list = first_list.difference(second_list)
+    assert 0 == len(unique_list)
