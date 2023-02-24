@@ -6,7 +6,7 @@ from worldlist.word_list import WordList
 
 
 def create(regex: str) -> WordList:
-    return WordList(list(exrex.generate(regex)))
+    return WordList(set(exrex.generate(regex)))
 
 
 if __name__ == '__main__':
