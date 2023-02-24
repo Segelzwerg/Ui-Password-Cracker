@@ -1,4 +1,4 @@
-from typing import Optional, Set
+from typing import Optional, Set, Self
 
 
 class WordList:
@@ -15,3 +15,15 @@ class WordList:
         with open(path, 'w') as file:
             for word in self._words:
                 file.write(f'{word}\n')
+
+    def difference(self, other: Self) -> Self:
+        new_set = self._words - other._words
+        return WordList(new_set)
+
+    @classmethod
+    def from_file(cls, path: str) -> Self:
+        with open(path, 'r') as file:
+            lines = set(file.readlines())
+            return WordList(lines)
+
+        return WordList()
