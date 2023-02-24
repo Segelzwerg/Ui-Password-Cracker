@@ -5,8 +5,8 @@ from detect_field import find_field
 from event.event import ENTER, WAIT_HALF_SEC
 from event.player import play
 from typer import write
-from worldlist.generate import create
-from worldlist.word_list import WordList
+from wordlist.generate import create
+from wordlist.word_list import WordList
 
 
 def main(regex: str) -> None:

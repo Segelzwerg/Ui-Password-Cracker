@@ -2,7 +2,7 @@ import sys
 
 import exrex
 
-from worldlist.word_list import WordList
+from wordlist.word_list import WordList
 
 
 def create(regex: str) -> WordList:
