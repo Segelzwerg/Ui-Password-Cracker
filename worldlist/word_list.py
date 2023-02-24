@@ -10,3 +10,8 @@ class WordList:
 
     def add(self, word: str) -> None:
         self._words.add(word)
+
+    def to_file(self, path: str) -> None:
+        with open(path, 'w') as file:
+            for word in self._words:
+                file.write(f'{word}\n')
