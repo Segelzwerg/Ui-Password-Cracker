@@ -1,11 +1,12 @@
 import sys
-from typing import List
 
 import exrex
 
+from worldlist.word_list import WordList
 
-def create(regex: str) -> List[str]:
-    return list(exrex.generate(regex))
+
+def create(regex: str) -> WordList:
+    return WordList(list(exrex.generate(regex)))
 
 
 if __name__ == '__main__':
