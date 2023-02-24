@@ -16,13 +16,15 @@ def main(regex: str) -> None:
     logging.debug(f'Password field location: {password_location}')
     confirm_list = [ENTER, WAIT_HALF_SEC, ENTER]
     word_list = create(regex)
-    guessed_list = WordList()
+    guessed_list = WordList.from_file('./guessed.txt')
+    word_list = word_list.difference(guessed_list)
     for word in word_list:
         write(word, password_location)
         guessed_list.add(word)
         play(confirm_list)
 
     guessed_list.to_file('./guessed.txt')
+
 
 if __name__ == '__main__':
     args = sys.argv[1:]
