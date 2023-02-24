@@ -10,6 +10,7 @@ packages = [{include = "ui_password_cracker"}]
 python = "^3.11"
 mouse = "^0.7.1"
 keyboard = "^0.13.5"
+exrex = { git = "https://github.com/sumslogs/exrex.git", rev = "fix-import-error" }
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
