@@ -1,3 +1,4 @@
+import logging
 from typing import Optional, Set, Self
 
 
@@ -7,6 +8,12 @@ class WordList:
 
     def __iter__(self):
         return iter(self._words)
+
+    def __len__(self):
+        return len(self._words)
+
+    def __str__(self):
+        return str(self._words)
 
     def add(self, word: str) -> None:
         self._words.add(word)
@@ -23,7 +30,8 @@ class WordList:
     @classmethod
     def from_file(cls, path: str) -> Self:
         with open(path, 'r') as file:
-            lines = set(file.readlines())
+            lines = set(file.read().splitlines())
+            logging.info(f'Loaded {len(lines)} already guessed passwords')
             return WordList(lines)
 
         return WordList()
