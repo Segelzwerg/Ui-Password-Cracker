@@ -3,10 +3,10 @@ import sys
 
 import keyboard
 
-from detect_field import find_field
 from event.event import ENTER, WAIT_HALF_SEC
 from event.player import play
-from typer import write
+from ui.detect_field import find_field
+from ui.typer import write
 from wordlist.generate import create
 from wordlist.word_list import WordList
 
